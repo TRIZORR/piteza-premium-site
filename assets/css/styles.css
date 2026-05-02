@@ -2956,7 +2956,7 @@ img[data-gallery-thumb] {
 
 /* Pet-themed page transition */
 :root {
-  --page-transition-duration: 1.26s;
+  --page-transition-duration: 1.68s;
   --page-transition-ease: cubic-bezier(.19, .82, .24, 1);
 }
 
@@ -3137,7 +3137,7 @@ body.is-page-entering .page-transition {
 }
 
 body.is-page-transitioning > :not(.page-transition) {
-  animation: pitezaPageFadeOut .98s var(--page-transition-ease) forwards;
+  animation: pitezaPageFadeOut 1.22s var(--page-transition-ease) forwards;
 }
 
 body.is-page-entering > :not(.page-transition) {
@@ -3145,7 +3145,7 @@ body.is-page-entering > :not(.page-transition) {
 }
 
 body.is-page-transitioning .page-transition__veil {
-  animation: pitezaVeilIn .58s ease forwards;
+  animation: pitezaVeilIn .72s ease forwards;
 }
 
 body.is-page-entering .page-transition__veil {
@@ -3154,23 +3154,23 @@ body.is-page-entering .page-transition__veil {
 }
 
 body.is-page-transitioning .page-transition__card {
-  animation: pitezaCardIn .96s var(--page-transition-ease) forwards;
+  animation: pitezaCardIn 1.18s var(--page-transition-ease) forwards;
 }
 
 body.is-page-entering .page-transition__card {
   opacity: 1;
   transform: none;
-  animation: pitezaCardOut 1.12s var(--page-transition-ease) forwards;
+  animation: pitezaCardOut 1.42s var(--page-transition-ease) forwards;
 }
 
 body.is-page-transitioning .page-transition__paw {
-  animation: pitezaPawIn 1.04s var(--page-transition-ease) forwards;
+  animation: pitezaPawIn 1.26s var(--page-transition-ease) forwards;
 }
 
 body.is-page-entering .page-transition__paw {
   opacity: .44;
   transform: none;
-  animation: pitezaPawOut 1.08s var(--page-transition-ease) forwards;
+  animation: pitezaPawOut 1.34s var(--page-transition-ease) forwards;
 }
 
 @keyframes pitezaVeilIn {
@@ -3180,7 +3180,7 @@ body.is-page-entering .page-transition__paw {
 
 @keyframes pitezaVeilOut {
   0% { opacity: 1; }
-  72% { opacity: 1; }
+  78% { opacity: 1; }
   100% { opacity: 0; }
 }
 
@@ -3204,9 +3204,9 @@ body.is-page-entering .page-transition__paw {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-  40% {
+  52% {
     opacity: 1;
-    transform: translateY(-4px) scale(1.008);
+    transform: translateY(-3px) scale(1.006);
   }
   100% {
     opacity: 0;
