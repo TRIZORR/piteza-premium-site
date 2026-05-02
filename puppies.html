@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PITEZA — Все щенки</title>
+<title>PITEZA — каталог щенков</title>
 <meta content="Каталог доступных щенков PITEZA: мальтезе, мальтипу и той-пудели с фильтрами по статусу, полу и сроку переезда." name="description"/>
 <meta content="#fcfaf7" name="theme-color"/>
 <meta content="website" property="og:type"/>
-<meta content="PITEZA — Все щенки" property="og:title"/>
+<meta content="PITEZA — каталог щенков" property="og:title"/>
 <meta content="Каталог доступных щенков PITEZA: мальтезе, мальтипу и той-пудели с фильтрами по статусу, полу и сроку переезда." property="og:description"/>
 <meta content="assets/images/hero-main.png" property="og:image"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -29,144 +29,141 @@
 </div>
 </div>
 </header>
-<main class="page">
-<section class="container section hero-panel page-hero">
-<div class="copy">
-<div class="breadcrumbs"><span>Главная</span><span>›</span><span>Щенки</span></div>
-<h1>Все щенки</h1>
-<p>Кураторски подобранные щенки от проверенных пар. Здоровье, темперамент и генетика — наш приоритет.</p>
-<div class="tabs-pills">
-<span class="pill active">Все щенки</span><span class="pill">Свободны</span><span class="pill">В резерве</span><span class="pill">Скоро в продаже</span>
+<main class="page shop-page">
+<section class="container section shop-controls" aria-label="Поиск щенка">
+<div class="shop-entry-row">
+<button class="shop-breed-button" type="button"><svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h12"></path><path d="M4 17h16"></path></svg><span>Выбор породы</span></button>
+<label class="shop-search-field"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input aria-label="Поиск по щенкам" placeholder="Введите ваш запрос..."/><button type="button" aria-label="Найти щенка"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.9" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button></label>
 </div>
+<div class="shop-action-row">
+<a class="shop-action-card shop-action-card-blue" href="contact.html">Наш Telegram канал</a>
+<a class="shop-action-card shop-action-card-dark" href="contact.html">Помочь выбрать кличку</a>
 </div>
-<img alt="Каталог щенков" decoding="async" src="assets/images/catalog-hero.png"/>
+<div class="shop-toolbar">
+<button class="shop-select" type="button">Сначала новые <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m7 10 5 5 5-5"></path></svg></button>
+<div class="shop-view-toggle" aria-label="Вид каталога"><button class="active" type="button" aria-label="Плитка"><svg class="icon" fill="currentColor" viewbox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"></path></svg></button><button type="button" aria-label="Список"><svg class="icon" fill="currentColor" viewbox="0 0 24 24"><path d="M4 5h4v4H4zM10 6h10v2H10zM4 10h4v4H4zM10 11h10v2H10zM4 15h4v4H4zM10 16h10v2H10z"></path></svg></button></div>
+<div class="shop-status-pills" aria-label="Статусы"><span><b class="status-dot status-free"></b>Доступен</span><span><b class="status-dot status-soon"></b>Скоро</span><span><b class="status-cross">×</b>Резерв</span></div>
+<button class="shop-select shop-currency" type="button">Рубли <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m7 10 5 5 5-5"></path></svg></button>
+</div>
 </section>
-<section class="container soft-panel catalog-filters">
-<div class="mini-filter"><span>Порода</span><strong>Выбрать породу</strong></div>
-<div class="mini-filter"><span>Пол</span><strong>Любой</strong></div>
-<div class="mini-filter"><span>Статус</span><strong>Любой</strong></div>
-<div class="mini-filter"><span>Ожидаемый размер</span><strong>Любой</strong></div>
-<div class="mini-filter"><span>Готовность к переезду</span><strong>Любая дата</strong></div>
-<div class="mini-filter"><span>Сортировка</span><strong>Сначала новые</strong></div>
-<a class="cta-dark" href="#catalog">Найти <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></a>
-</section>
-<section class="container reserve-band section">
-<div><strong style="font-family:Georgia,serif;font-weight:400;font-size:36px;">Reserve list — приоритетный доступ к будущим помётам</strong><div class="lead" style="margin:10px 0 0;font-size:17px;">Запишитесь в лист ожидания и получите ранний доступ к выбору щенка из следующих помётов.</div></div>
-<a class="cta-outline" href="contact.html">Записаться в лист ожидания <svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg></a>
-</section>
-<section class="container catalog-layout" id="catalog">
-<aside class="catalog-side">
-<span class="circle-btn"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m10 8 6 4-6 4V8Z"></path></svg></span>
-<h3>Видео-знакомство<br/>с щенком</h3>
-<p class="lead" style="font-size:17px;">Мы снимаем персональные видео для каждой семьи, чтобы вы могли увидеть щенка ещё до встречи.</p>
-<ul>
-<li>Видео доступно по запросу</li>
-<li>Покажем характер и повадки</li>
-<li>Ответим на все вопросы</li>
-</ul>
-<a class="cta-outline" href="contact.html">Заказать видео</a>
+<section class="container shop-catalog-layout" id="catalog">
+<div class="catalog-grid shop-products">
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Тедди" decoding="async" loading="lazy" src="assets/images/catalog-brown.png"/><span class="shop-card-status shop-card-status-reserve">Резерв</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Тедди</h4><div class="breed">Той-пудель</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">330 000 ₽</div>
+<div class="info-line"><span>Мальчик</span><span>2 мес.</span><span>2.5-3.5 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Белла" decoding="async" loading="lazy" src="assets/images/catalog-white.png"/><span class="shop-card-status shop-card-status-free">Свободна</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Белла</h4><div class="breed">Мальтезе</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">320 000 ₽</div>
+<div class="info-line"><span>Девочка</span><span>2.5 мес.</span><span>2-3 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Мило" decoding="async" loading="lazy" src="assets/images/catalog-cream.png"/><span class="shop-card-status shop-card-status-free">Свободен</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Мило</h4><div class="breed">Мальтипу</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">350 000 ₽</div>
+<div class="info-line"><span>Мальчик</span><span>3 мес.</span><span>3-4 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Луна" decoding="async" loading="lazy" src="assets/images/catalog-luna.png"/><span class="shop-card-status shop-card-status-free">Свободна</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Луна</h4><div class="breed">Мальтипу</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">360 000 ₽</div>
+<div class="info-line"><span>Девочка</span><span>2.5 мес.</span><span>3-4 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Чарли" decoding="async" loading="lazy" src="assets/images/catalog-charli.png"/><span class="shop-card-status shop-card-status-free">Свободен</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Чарли</h4><div class="breed">Той-пудель</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">340 000 ₽</div>
+<div class="info-line"><span>Мальчик</span><span>2 мес.</span><span>2.5-3.5 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Софи" decoding="async" loading="lazy" src="assets/images/catalog-sofi.png"/><span class="shop-card-status shop-card-status-soon">Скоро</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Софи</h4><div class="breed">Мальтезе</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">310 000 ₽</div>
+<div class="info-line"><span>Девочка</span><span>2 мес.</span><span>2-3 кг</span></div>
+<div class="mini-icons"><span>Видео по запросу</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Оливер" decoding="async" loading="lazy" src="assets/images/catalog-oliver.png"/><span class="shop-card-status shop-card-status-free">Свободен</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Оливер</h4><div class="breed">Мальтипу</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">355 000 ₽</div>
+<div class="info-line"><span>Мальчик</span><span>3 мес.</span><span>3-4 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Коко" decoding="async" loading="lazy" src="assets/images/catalog-koko.png"/><span class="shop-card-status shop-card-status-reserve">Резерв</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Коко</h4><div class="breed">Мальтезе</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">345 000 ₽</div>
+<div class="info-line"><span>Девочка</span><span>2.5 мес.</span><span>2-3 кг</span></div>
+<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+<article class="catalog-card shop-card">
+<div class="shop-card-media"><img alt="Бруни" decoding="async" loading="lazy" src="assets/images/puppy-brown-c.png"/><span class="shop-card-status shop-card-status-soon">Скоро</span></div>
+<div class="body">
+<div class="card-topline"><div><h4>Бруни</h4><div class="breed">Той-пудель</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
+<div class="shop-price">330 000 ₽</div>
+<div class="info-line"><span>Мальчик</span><span>2 мес.</span><span>2.5-3.5 кг</span></div>
+<div class="mini-icons"><span>Видео по запросу</span><span>Документы РКФ</span></div>
+<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
+</div>
+</article>
+</div>
+<aside class="shop-filter-panel" aria-label="Фильтры каталога">
+<div class="shop-filter-group">
+<h3>Фильтровать по цене</h3>
+<div class="shop-price-inputs"><span>300 000</span><span>400 000</span></div>
+<div class="shop-price-range"><span></span></div>
+</div>
+<div class="shop-filter-group">
+<h3>Наличие</h3>
+<label><input type="checkbox"/> В продаже (5)</label>
+<label><input type="checkbox"/> Скоро (2)</label>
+<label><input type="checkbox"/> В резерве (2)</label>
+</div>
+<div class="shop-filter-group">
+<h3>Порода</h3>
+<label><input type="checkbox"/> Мальтезе (3)</label>
+<label><input type="checkbox"/> Мальтипу (3)</label>
+<label><input type="checkbox"/> Той-пудель (3)</label>
+</div>
+<div class="shop-filter-group">
+<h3>Пол щенка</h3>
+<label><input type="checkbox"/> Девочка (4)</label>
+<label><input type="checkbox"/> Мальчик (5)</label>
+</div>
+<a class="cta-dark" href="contact.html">Подобрать щенка</a>
 </aside>
-<div class="catalog-grid">
-<article class="catalog-card">
-<img alt="Тедди" decoding="async" loading="lazy" src="assets/images/catalog-brown.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Тедди</h4><div class="breed">Той-пудель</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Мальчик</span><span>•</span><span>2.5 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 2.5–3.5 кг</span></div>
-<div style="margin-top:12px"><span class="tag free">Свободен</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Белла" decoding="async" loading="lazy" src="assets/images/catalog-white.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Белла</h4><div class="breed">Мальтезе</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Девочка</span><span>•</span><span>2 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 2–3 кг</span></div>
-<div style="margin-top:12px"><span class="tag free">Свободен</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Мило" decoding="async" loading="lazy" src="assets/images/catalog-cream.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Мило</h4><div class="breed">Мальтипу</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Мальчик</span><span>•</span><span>3 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 3–4 кг</span></div>
-<div style="margin-top:12px"><span class="tag reserve">Резерв</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Луна" decoding="async" loading="lazy" src="assets/images/catalog-luna.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Луна</h4><div class="breed">Кавапу</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Девочка</span><span>•</span><span>2.5 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 4–6 кг</span></div>
-<div style="margin-top:12px"><span class="tag free">Свободен</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Чарли" decoding="async" loading="lazy" src="assets/images/catalog-charli.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Чарли</h4><div class="breed">Той-пудель</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Мальчик</span><span>•</span><span>2 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 2.5–3.5 кг</span></div>
-<div style="margin-top:12px"><span class="tag free">Свободен</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Софи" decoding="async" loading="lazy" src="assets/images/catalog-sofi.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Софи</h4><div class="breed">Мальтезе</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Девочка</span><span>•</span><span>2 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 2–3 кг</span></div>
-<div style="margin-top:12px"><span class="tag soon">Скоро</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Оливер" decoding="async" loading="lazy" src="assets/images/catalog-oliver.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Оливер</h4><div class="breed">Мальтипу</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Мальчик</span><span>•</span><span>3 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 3–4 кг</span></div>
-<div style="margin-top:12px"><span class="tag free">Свободен</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Коко" decoding="async" loading="lazy" src="assets/images/catalog-koko.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Коко</h4><div class="breed">Кавапу</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Девочка</span><span>•</span><span>2.5 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 4–6 кг</span></div>
-<div style="margin-top:12px"><span class="tag reserve">Резерв</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-<article class="catalog-card">
-<img alt="Бруни" decoding="async" loading="lazy" src="assets/images/puppy-brown-c.png"/>
-<div class="body">
-<div class="card-topline"><div><h4>Бруни</h4><div class="breed">Той-пудель</div></div><span class="circle-btn" style="width:38px;height:38px;"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="info-line"><span>Мальчик</span><span>•</span><span>2 мес.</span></div>
-<div class="info-line"><span>Ожидаемый вес: 2.5–3.5 кг</span></div>
-<div style="margin-top:12px"><span class="tag soon">Скоро</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Родители представлены</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a><span class="circle-btn" style="width:46px;height:46px;">+</span></div>
-</div>
-</article>
-</div>
 </section>
 <section class="container section split-banner">
 <img alt="Помощь в выборе" decoding="async" loading="lazy" src="assets/images/hero-main.png"/>
