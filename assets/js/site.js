@@ -341,6 +341,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultMin = priceMin?.value || '';
     const defaultMax = priceMax?.value || '';
     const allFilterInputs = [priceMin, priceMax, ...statusFilters, ...breedFilters, ...sexFilters].filter(Boolean);
+    const availableBreeds = [...new Set(puppyCards.map((card) => card.dataset.breed).filter(Boolean))];
+    let selectedBreeds = [];
 
     puppyCards.forEach((card, index) => {
       card.dataset.initialIndex = String(index);
@@ -355,9 +357,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const activeBreed = () => {
-      const selected = checkedValues(breedFilters);
-      if (selected.length === 0) return 'all';
-      return selected.length === 1 ? selected[0] : 'multiple';
+      if (selectedBreeds.length === 0) return 'all';
+      return selectedBreeds.length === 1 ? selectedBreeds[0] : 'multiple';
     };
 
     const updateBreedTiles = () => {
@@ -409,8 +410,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const min = priceMin?.value ? Number(priceMin.value) : Number.NEGATIVE_INFINITY;
       const max = priceMax?.value ? Number(priceMax.value) : Number.POSITIVE_INFINITY;
       const selectedStatuses = checkedValues(statusFilters);
-      const selectedBreeds = checkedValues(breedFilters);
       const selectedSexes = checkedValues(sexFilters);
+      const selectedBreedsFromInputs = checkedValues(breedFilters);
+      const selectedBreedsForFilter = selectedBreedsFromInputs.length > 0 ? selectedBreedsFromInputs : selectedBreeds;
 
       sortCards();
 
@@ -418,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
       puppyCards.forEach((card) => {
         const price = Number(card.dataset.price || 0);
         const statusMatch = selectedStatuses.length === 0 || selectedStatuses.includes(card.dataset.status);
-        const breedMatch = selectedBreeds.length === 0 || selectedBreeds.includes(card.dataset.breed);
+        const breedMatch = selectedBreedsForFilter.length === 0 || selectedBreedsForFilter.includes(card.dataset.breed);
         const sexMatch = selectedSexes.length === 0 || selectedSexes.includes(card.dataset.sex);
         const priceMatch = price >= min && price <= max;
         const textMatch = matchesText(card, query);
@@ -434,7 +436,8 @@ document.addEventListener('DOMContentLoaded', () => {
       updateUrl();
     };
 
-    if (initialBreed && breedFilters.some((item) => item.value === initialBreed)) {
+    if (initialBreed && availableBreeds.includes(initialBreed)) {
+      selectedBreeds = [initialBreed];
       setCheckedValues(breedFilters, [initialBreed]);
       document.getElementById('catalog')?.scrollIntoView({ block: 'start' });
     }
@@ -449,6 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
     breedTiles.forEach((tile) => {
       tile.addEventListener('click', () => {
         const breed = tile.dataset.breedOption;
+        selectedBreeds = breed && breed !== 'all' ? [breed] : [];
         setCheckedValues(breedFilters, breed && breed !== 'all' ? [breed] : []);
         if (breedMenu) breedMenu.hidden = true;
         breedToggle?.setAttribute('aria-expanded', 'false');
@@ -486,6 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
       [...statusFilters, ...breedFilters, ...sexFilters].forEach((input) => {
         input.checked = false;
       });
+      selectedBreeds = [];
       if (sortSelect) sortSelect.value = 'new';
       applyFilters();
     });
