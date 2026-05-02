@@ -3313,3 +3313,510 @@ body.is-page-entering .page-transition__paw {
     transform: none !important;
   }
 }
+
+/* Final mobile hardening */
+@media (max-width: 920px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .page {
+    overflow-x: clip;
+  }
+
+  .container {
+    width: min(calc(100% - 20px), var(--container)) !important;
+  }
+
+  .header {
+    top: 8px;
+    width: min(calc(100% - 16px), 1240px) !important;
+    border-radius: 24px;
+  }
+
+  .header-inner {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-areas:
+      'logo toggle'
+      'nav nav'
+      'actions actions';
+    align-items: center;
+    gap: 12px;
+    min-height: auto !important;
+    padding: 12px 14px !important;
+  }
+
+  .brand-logo {
+    grid-area: logo;
+    min-width: 0;
+  }
+
+  .brand-logo img {
+    width: 96px !important;
+    max-width: 100%;
+  }
+
+  .nav-toggle {
+    grid-area: toggle;
+    display: inline-flex;
+  }
+
+  .nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    border-top: 0;
+  }
+
+  body.nav-open .nav {
+    max-height: 560px;
+    padding-top: 8px;
+    padding-bottom: 4px;
+  }
+
+  .nav a {
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 14px 6px;
+    border-top: 1px solid rgba(102, 78, 54, .11);
+  }
+
+  .header-actions {
+    grid-area: actions;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  body.nav-open .header-actions {
+    display: flex;
+  }
+
+  .header-actions .circle-btn {
+    display: none !important;
+  }
+
+  .header-actions .cta-outline,
+  .header-actions .cta-dark,
+  .header-actions .cta-light {
+    width: 100%;
+  }
+
+  .hero-main,
+  .hero-small,
+  .reserve-card,
+  .page-hero,
+  .consult-hero,
+  .story-feature {
+    min-height: auto !important;
+  }
+
+  .hero-main {
+    min-height: 500px !important;
+  }
+
+  .hero-small,
+  .reserve-card {
+    min-height: 250px !important;
+  }
+
+  .panel-content,
+  .page-hero .copy,
+  .consult-hero-copy,
+  .stories-hero-copy,
+  .split-banner .copy,
+  .duo-banner .copy,
+  .story-feature .copy,
+  .detail-box,
+  .soft-card,
+  .mini-stat,
+  .info-card,
+  .catalog-side,
+  .form-panel,
+  .map-side {
+    padding: 24px 20px !important;
+  }
+
+  .home-hero .panel-content h1,
+  .page-hero h1,
+  .breed-hero h1,
+  .stories-hero-copy h1,
+  .consult-hero-copy h1,
+  .puppy-meta h1 {
+    font-size: clamp(36px, 11vw, 52px) !important;
+    line-height: .94;
+  }
+
+  .section-head,
+  .reserve-band,
+  .footer-cta-inner {
+    min-width: 0;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-head h2,
+  .section-title,
+  .split-banner h3,
+  .story-feature h3,
+  .footer-cta h3,
+  .detail-box h3,
+  .form-panel h3,
+  .contact-stack h3,
+  .map-panel h3 {
+    font-size: clamp(30px, 9vw, 42px) !important;
+    line-height: .98;
+  }
+
+  .hero-label {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 20px;
+  }
+
+  .hero-copy-small {
+    inset: auto 18px 18px 18px;
+  }
+
+  .hero-copy-small h3 {
+    font-size: 28px;
+  }
+
+  .filters-bar,
+  .feature-duo,
+  .puppy-grid-home,
+  .catalog-grid,
+  .stories-strip,
+  .story-mosaic,
+  .feature-row-5,
+  .info-grid-4,
+  .parent-row,
+  .kpi-grid,
+  .steps-grid,
+  .faq-grid,
+  .benefit-strip,
+  .video-row,
+  .consult-layout,
+  .form-grid,
+  .timeline-track,
+  .footer-cta-inner,
+  .detail-grid,
+  .parents-two,
+  .catalog-layout,
+  .page-hero,
+  .split-banner,
+  .duo-banner,
+  .story-hero,
+  .story-feature,
+  .consult-hero,
+  .puppy-detail-top,
+  .map-grid,
+  .tab-bar,
+  .catalog-filters {
+    grid-template-columns: 1fr !important;
+  }
+
+  .story-preview,
+  .parent-card,
+  .product-row,
+  .contact-card,
+  .key-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .story-preview,
+  .contact-card,
+  .reserve-band,
+  .split-banner,
+  .duo-banner,
+  .product-card,
+  .catalog-card,
+  .person-card,
+  .parent-card,
+  .gallery-panel,
+  .footer-cta,
+  .timeline-mini,
+  .form-panel,
+  .contact-stack,
+  .map-panel,
+  .catalog-side {
+    border-radius: 24px;
+  }
+
+  .story-preview img,
+  .parent-card img,
+  .person-card img {
+    min-height: 0 !important;
+    height: auto;
+    aspect-ratio: 1.08 / 1;
+    object-fit: cover;
+  }
+
+  .catalog-card img,
+  .product-row img,
+  .main-gallery img {
+    aspect-ratio: 1 / 1.02;
+  }
+
+  .gallery-thumb-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px;
+  }
+
+  .gallery-nav {
+    left: 8px;
+    width: calc(100% - 16px);
+  }
+
+  .gallery-count {
+    left: 12px;
+    bottom: 12px;
+    padding: 8px 11px;
+    font-size: 13px;
+  }
+
+  .benefit-item {
+    border-right: 0;
+    border-bottom: 1px solid rgba(102, 78, 54, .12);
+  }
+
+  .benefit-item:last-child {
+    border-bottom: 0;
+  }
+
+  .tab-bar a {
+    min-height: 52px;
+    padding: 16px 18px;
+    text-align: left;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .tab-bar a:last-child {
+    border-bottom: 0;
+  }
+
+  .tabs-pills,
+  .breadcrumbs,
+  .inline-badges,
+  .puppy-actions,
+  .card-actions {
+    gap: 10px;
+  }
+
+  .card-actions,
+  .puppy-actions,
+  .footer-cta .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card-actions > *,
+  .puppy-actions > *,
+  .footer-cta .actions > * {
+    width: 100%;
+  }
+
+  .cta-outline,
+  .cta-dark,
+  .cta-light,
+  .subtle-link {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .cta-outline,
+  .cta-dark,
+  .cta-light {
+    width: 100%;
+    min-height: 50px;
+    padding: 14px 18px;
+    line-height: 1.35;
+  }
+
+  .circle-btn + .cta-outline,
+  .circle-btn + .cta-dark {
+    margin-top: 0;
+  }
+
+  .mini-filter {
+    min-height: auto !important;
+    padding: 16px 18px !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .reserve-band {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .reserve-band strong {
+    display: block;
+    font-size: clamp(26px, 7vw, 34px) !important;
+    line-height: 1.05;
+  }
+
+  .reserve-card h3[style],
+  .timeline-mini h3[style],
+  .soft-panel h1[style] {
+    font-size: clamp(28px, 8.5vw, 38px) !important;
+    line-height: 1.02;
+  }
+
+  .reserve-card .lead[style],
+  .timeline-mini .lead[style],
+  .soft-panel .lead[style] {
+    font-size: 15px !important;
+    line-height: 1.55;
+  }
+
+  .story-feature .copy > div[style*='font-size:64px'] {
+    font-size: 42px !important;
+    line-height: .9 !important;
+  }
+
+  .contact-card {
+    align-items: start;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .contact-card > a,
+  .contact-card > .cta-outline,
+  .contact-card > .cta-dark,
+  .contact-card > .cta-light {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+
+  .field textarea {
+    min-height: 120px;
+  }
+
+  .timeline-mini {
+    padding: 22px 18px;
+  }
+
+  .timeline-point {
+    align-items: flex-start;
+  }
+
+  .map-fake {
+    min-height: 240px !important;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .footer-cta img {
+    height: auto;
+    aspect-ratio: 1.22 / 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(calc(100% - 16px), var(--container)) !important;
+  }
+
+  .header {
+    border-radius: 20px;
+  }
+
+  .header-inner {
+    padding: 10px 12px !important;
+  }
+
+  .brand-logo img {
+    width: 88px !important;
+  }
+
+  .hero-main {
+    min-height: 440px !important;
+  }
+
+  .panel-content,
+  .page-hero .copy,
+  .consult-hero-copy,
+  .stories-hero-copy,
+  .split-banner .copy,
+  .duo-banner .copy,
+  .story-feature .copy,
+  .detail-box,
+  .soft-card,
+  .mini-stat,
+  .info-card,
+  .catalog-side,
+  .form-panel,
+  .map-side {
+    padding: 22px 18px !important;
+  }
+
+  .home-hero .panel-content h1,
+  .page-hero h1,
+  .breed-hero h1,
+  .stories-hero-copy h1,
+  .consult-hero-copy h1,
+  .puppy-meta h1 {
+    font-size: clamp(34px, 10.5vw, 44px) !important;
+  }
+
+  .section-head h2,
+  .section-title,
+  .split-banner h3,
+  .story-feature h3,
+  .footer-cta h3,
+  .detail-box h3,
+  .form-panel h3,
+  .contact-stack h3,
+  .map-panel h3 {
+    font-size: clamp(28px, 8.5vw, 36px) !important;
+  }
+
+  .hero-label {
+    align-items: flex-start;
+  }
+
+  .hero-copy-small h3 {
+    font-size: 24px;
+  }
+
+  .card-title,
+  .catalog-card h4 {
+    font-size: 30px !important;
+  }
+
+  .soft-panel[style*='text-align:center'] > div[style*='display:flex'] {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .gallery-thumb-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .footer-cta-inner {
+    padding: 12px;
+  }
+}
