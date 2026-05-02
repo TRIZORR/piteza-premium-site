@@ -871,6 +871,18 @@ body.nav-open .nav-toggle span::after { opacity: 0; }
   letter-spacing: .08em;
   text-transform: uppercase;
 }
+.card-topline > .circle-btn,
+.card-favorite {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px;
+  color: rgba(70, 48, 34, .78);
+}
+.card-topline > .circle-btn .icon,
+.card-favorite .icon {
+  width: 14px;
+  height: 14px;
+}
 .tag {
   min-height: 32px;
   padding: 0 13px;
@@ -880,6 +892,16 @@ body.nav-open .nav-toggle span::after { opacity: 0; }
   letter-spacing: .045em;
   text-transform: uppercase;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.64);
+}
+.card-price {
+  margin-top: 12px;
+  font-family: var(--font-sans);
+  font-size: 23px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: #2b1f18;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .meta,
 .catalog-card .info-line,
@@ -1414,7 +1436,22 @@ body { font-size: 15px; line-height: 1.55; }
 .catalog-card h4 { font-size: 29px; line-height: 1; }
 .card-breed,
 .catalog-card .breed { font-size: 11px; margin-top: 6px; letter-spacing: .07em; }
+.card-topline > .circle-btn,
+.card-favorite {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px;
+}
+.card-topline > .circle-btn .icon,
+.card-favorite .icon {
+  width: 13px;
+  height: 13px;
+}
 .tag { min-height: 27px; padding: 0 10px; font-size: 10px; letter-spacing: .04em; }
+.card-price {
+  margin-top: 10px;
+  font-size: 21px;
+}
 .meta,
 .catalog-card .info-line,
 .catalog-card .mini-icons { font-size: 13px; line-height: 1.55; }
