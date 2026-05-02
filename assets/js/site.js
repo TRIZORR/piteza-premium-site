@@ -3,10 +3,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerInner = document.querySelector('.header-inner');
   const nav = document.querySelector('.nav');
   const transitionStorageKey = 'piteza-page-transition';
-  const transitionDuration = 1080;
-  const transitionExitDelay = 760;
+  const transitionDuration = 1260;
+  const transitionExitDelay = 900;
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   let navigationInProgress = false;
+  const transitionCopyByPage = {
+    'index.html': {
+      title: 'Возвращаемся на главную',
+      text: 'Сейчас мягко вернём вас к главной странице и знакомству с Piteza.'
+    },
+    'puppies.html': {
+      title: 'Открываем каталог щенков',
+      text: 'Подготавливаем спокойный переход к малышам, фото и актуальным статусам.'
+    },
+    'puppy-single.html': {
+      title: 'Покажем щенка ближе',
+      text: 'Сейчас откроем карточку малыша с деталями, характером и фотографиями.'
+    },
+    'breed-maltipoo.html': {
+      title: 'Переходим к породе',
+      text: 'Собираем всё важное о мальтипу в одном плавном и спокойном переходе.'
+    },
+    'about.html': {
+      title: 'Заглянем в питомник',
+      text: 'Открываем страницу о питомнике, родителях и нашем деликатном подходе.'
+    },
+    'how-to-buy.html': {
+      title: 'Покажем путь домой',
+      text: 'Сейчас проведём вас по этапам выбора, бронирования и переезда щенка.'
+    },
+    'stories.html': {
+      title: 'Открываем истории семей',
+      text: 'Переносим вас к тёплым отзывам и живым историям выпускников Piteza.'
+    },
+    'contact.html': {
+      title: 'Связь уже рядом',
+      text: 'Открываем контакты и консультацию, чтобы вы могли написать нам без лишних шагов.'
+    }
+  };
 
   const pawSvg = `
     <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
@@ -55,11 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = layer.querySelector('.page-transition__text');
     const targetPath = href ? new URL(href, window.location.href).pathname.split('/').pop() || 'index.html' : '';
     const cleanLabel = label ? label.replace(/\s+/g, ' ').trim() : '';
+    const preset = transitionCopyByPage[targetPath];
 
-    title.textContent = cleanLabel || 'Переходим дальше';
-    text.textContent = targetPath === 'contact.html'
-      ? 'Сейчас мягко переведём вас к консультации и связи с питомником.'
-      : 'Лапки уже ведут вас к следующей странице Piteza.';
+    title.textContent = preset?.title || cleanLabel || 'Продолжаем знакомство';
+    text.textContent = preset?.text || 'Сейчас мягко переведём вас к следующему разделу Piteza.';
   };
 
   const readTransitionPayload = () => {

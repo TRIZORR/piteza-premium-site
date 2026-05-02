@@ -2956,8 +2956,8 @@ img[data-gallery-thumb] {
 
 /* Pet-themed page transition */
 :root {
-  --page-transition-duration: 1.08s;
-  --page-transition-ease: cubic-bezier(.22, .8, .24, 1);
+  --page-transition-duration: 1.26s;
+  --page-transition-ease: cubic-bezier(.19, .82, .24, 1);
 }
 
 .has-page-transition {
@@ -2988,8 +2988,8 @@ img[data-gallery-thumb] {
     radial-gradient(circle at 18% 18%, rgba(255, 251, 244, .94), transparent 26vw),
     radial-gradient(circle at 84% 12%, rgba(244, 226, 208, .78), transparent 24vw),
     linear-gradient(135deg, rgba(255, 249, 240, .94) 0%, rgba(247, 237, 225, .98) 46%, rgba(255, 253, 249, .96) 100%);
-  backdrop-filter: blur(10px) saturate(120%);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(7px) saturate(118%);
+  -webkit-backdrop-filter: blur(7px) saturate(118%);
 }
 
 .page-transition__paws {
@@ -2999,10 +2999,10 @@ img[data-gallery-thumb] {
 .page-transition__paw {
   position: absolute;
   width: clamp(56px, 7vw, 88px);
-  color: rgba(183, 138, 93, .38);
+  color: rgba(183, 138, 93, .3);
   opacity: 0;
-  transform: translate3d(0, 18px, 0) scale(.72) rotate(-10deg);
-  filter: drop-shadow(0 10px 28px rgba(80, 54, 30, .08));
+  transform: translate3d(0, 14px, 0) scale(.84);
+  filter: drop-shadow(0 8px 22px rgba(80, 54, 30, .06));
 }
 
 .page-transition__paw svg {
@@ -3053,7 +3053,7 @@ img[data-gallery-thumb] {
   gap: 10px;
   text-align: center;
   opacity: 0;
-  transform: translateY(34px) scale(.9);
+  transform: translateY(24px) scale(.965);
 }
 
 .page-transition__glow {
@@ -3137,7 +3137,7 @@ body.is-page-entering .page-transition {
 }
 
 body.is-page-transitioning > :not(.page-transition) {
-  animation: pitezaPageFadeOut .9s var(--page-transition-ease) forwards;
+  animation: pitezaPageFadeOut .98s var(--page-transition-ease) forwards;
 }
 
 body.is-page-entering > :not(.page-transition) {
@@ -3145,7 +3145,7 @@ body.is-page-entering > :not(.page-transition) {
 }
 
 body.is-page-transitioning .page-transition__veil {
-  animation: pitezaVeilIn .45s ease forwards;
+  animation: pitezaVeilIn .58s ease forwards;
 }
 
 body.is-page-entering .page-transition__veil {
@@ -3154,23 +3154,23 @@ body.is-page-entering .page-transition__veil {
 }
 
 body.is-page-transitioning .page-transition__card {
-  animation: pitezaCardIn .72s var(--page-transition-ease) forwards;
+  animation: pitezaCardIn .96s var(--page-transition-ease) forwards;
 }
 
 body.is-page-entering .page-transition__card {
   opacity: 1;
   transform: none;
-  animation: pitezaCardOut 1s var(--page-transition-ease) forwards;
+  animation: pitezaCardOut 1.12s var(--page-transition-ease) forwards;
 }
 
 body.is-page-transitioning .page-transition__paw {
-  animation: pitezaPawIn .82s var(--page-transition-ease) forwards;
+  animation: pitezaPawIn 1.04s var(--page-transition-ease) forwards;
 }
 
 body.is-page-entering .page-transition__paw {
-  opacity: .58;
+  opacity: .44;
   transform: none;
-  animation: pitezaPawOut .94s var(--page-transition-ease) forwards;
+  animation: pitezaPawOut 1.08s var(--page-transition-ease) forwards;
 }
 
 @keyframes pitezaVeilIn {
@@ -3187,56 +3187,56 @@ body.is-page-entering .page-transition__paw {
 @keyframes pitezaCardIn {
   0% {
     opacity: 0;
-    transform: translateY(34px) scale(.9) rotate(-4deg);
+    transform: translateY(24px) scale(.965);
   }
-  68% {
+  72% {
     opacity: 1;
-    transform: translateY(-4px) scale(1.02) rotate(0deg);
+    transform: translateY(-3px) scale(1.006);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
+    transform: translateY(0) scale(1);
   }
 }
 
 @keyframes pitezaCardOut {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
+    transform: translateY(0) scale(1);
   }
-  36% {
+  40% {
     opacity: 1;
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-4px) scale(1.008);
   }
   100% {
     opacity: 0;
-    transform: translateY(-34px) scale(.88);
+    transform: translateY(-20px) scale(.97);
   }
 }
 
 @keyframes pitezaPawIn {
   0% {
     opacity: 0;
-    transform: translate3d(-18px, 30px, 0) scale(.62) rotate(-14deg);
+    transform: translate3d(0, 14px, 0) scale(.84);
   }
-  65% {
-    opacity: .88;
-    transform: translate3d(0, -2px, 0) scale(1.02) rotate(0deg);
+  70% {
+    opacity: .55;
+    transform: translate3d(0, -1px, 0) scale(1.01);
   }
   100% {
-    opacity: .72;
-    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    opacity: .48;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes pitezaPawOut {
   0% {
-    opacity: .72;
+    opacity: .48;
     transform: translate3d(0, 0, 0) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate3d(22px, -22px, 0) scale(.68) rotate(10deg);
+    transform: translate3d(10px, -10px, 0) scale(.9);
   }
 }
 
@@ -3247,17 +3247,17 @@ body.is-page-entering .page-transition__paw {
     transform: scale(1);
   }
   to {
-    opacity: .12;
-    filter: blur(12px);
-    transform: scale(.985);
+    opacity: .32;
+    filter: blur(4px);
+    transform: scale(.994);
   }
 }
 
 @keyframes pitezaPageFadeIn {
   from {
-    opacity: .18;
-    filter: blur(12px);
-    transform: scale(.985);
+    opacity: .4;
+    filter: blur(4px);
+    transform: scale(.994);
   }
   70% {
     opacity: 1;
