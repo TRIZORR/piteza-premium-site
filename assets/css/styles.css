@@ -557,6 +557,15 @@ body.nav-open .nav-toggle span::after { opacity: 0; }
 }
 .hero-main::before { background: linear-gradient(90deg, rgba(255,250,244,.92) 0%, rgba(255,250,244,.78) 36%, rgba(255,250,244,.08) 74%); }
 .hero-small::before { background: linear-gradient(180deg, transparent 35%, rgba(23,18,14,.64) 100%); }
+.hero-main.hero-main-clean {
+  background:
+    radial-gradient(circle at top right, rgba(233, 220, 205, .72) 0%, rgba(233, 220, 205, 0) 34%),
+    radial-gradient(circle at bottom left, rgba(243, 234, 225, .92) 0%, rgba(243, 234, 225, 0) 42%),
+    linear-gradient(135deg, #fdf9f5 0%, #f5ece2 54%, #efe5da 100%);
+}
+.hero-main.hero-main-clean::before {
+  background: linear-gradient(135deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.06) 100%);
+}
 .cover-img { z-index: 0; transition: transform .9s cubic-bezier(.2,.7,.2,1), filter .6s ease; }
 .hero-panel:hover .cover-img,
 .catalog-card:hover > img,
