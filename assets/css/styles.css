@@ -4805,7 +4805,7 @@ body.is-page-entering .page-transition__paw {
   gap: 7px;
   margin: 0;
   font-family: var(--font-body) !important;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 300 !important;
   line-height: 1.15;
   letter-spacing: 0;
@@ -4815,13 +4815,13 @@ body.is-page-entering .page-transition__paw {
 .shop-card .shop-price {
   margin-top: 0;
   color: #090807;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 400;
   letter-spacing: 0;
 }
 
 .shop-card-description {
-  display: -webkit-box;
+  display: none;
   margin: 2px 0 0;
   overflow: hidden;
   color: #7a736c;
@@ -4931,11 +4931,11 @@ body.is-page-entering .page-transition__paw {
 }
 
 .shop-products.is-list .shop-card h4 {
-  font-size: 23px;
+  font-size: 19px;
 }
 
 .shop-products.is-list .shop-card .shop-price {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .shop-products.is-list .shop-card-description {
@@ -4987,11 +4987,11 @@ body.is-page-entering .page-transition__paw {
   }
 
   .shop-card h4 {
-    font-size: 21px !important;
+    font-size: 18px !important;
   }
 
   .shop-card .shop-price {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .shop-products.is-list .shop-card {
