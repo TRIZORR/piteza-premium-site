@@ -316,17 +316,193 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // Catalog search.
-  const searchInput = document.querySelector('.search-field input');
-  const searchableCards = [...document.querySelectorAll('.catalog-card, .product-card')];
-  if (searchInput && searchableCards.length) {
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.trim().toLowerCase();
-      searchableCards.forEach((card) => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? '' : 'none';
+  // Catalog filters for the puppy shop page.
+  const shopProducts = document.querySelector('[data-shop-products]');
+  const puppyCards = [...document.querySelectorAll('[data-puppy-card]')];
+  if (shopProducts && puppyCards.length) {
+    const breedToggle = document.querySelector('[data-shop-breed-toggle]');
+    const breedMenu = document.querySelector('[data-shop-breed-menu]');
+    const breedTiles = [...document.querySelectorAll('[data-breed-option]')];
+    const shopSearch = document.querySelector('[data-shop-search]');
+    const shopSearchSubmit = document.querySelector('[data-shop-search-submit]');
+    const sortSelect = document.querySelector('[data-shop-sort]');
+    const viewButtons = [...document.querySelectorAll('[data-shop-view]')];
+    const resetButton = document.querySelector('[data-shop-reset]');
+    const emptyState = document.querySelector('[data-shop-empty]');
+    const priceMin = document.querySelector('[data-price-min]');
+    const priceMax = document.querySelector('[data-price-max]');
+    const statusFilters = [...document.querySelectorAll('[data-filter-status]')];
+    const breedFilters = [...document.querySelectorAll('[data-filter-breed]')];
+    const sexFilters = [...document.querySelectorAll('[data-filter-sex]')];
+    const quickStatusButtons = [...document.querySelectorAll('[data-status-quick]')];
+
+    const params = new URLSearchParams(window.location.search);
+    const initialBreed = params.get('breed');
+    const defaultMin = priceMin?.value || '';
+    const defaultMax = priceMax?.value || '';
+    const allFilterInputs = [priceMin, priceMax, ...statusFilters, ...breedFilters, ...sexFilters].filter(Boolean);
+
+    puppyCards.forEach((card, index) => {
+      card.dataset.initialIndex = String(index);
+    });
+
+    const checkedValues = (items) => items.filter((item) => item.checked).map((item) => item.value);
+
+    const setCheckedValues = (items, values) => {
+      items.forEach((item) => {
+        item.checked = values.includes(item.value);
+      });
+    };
+
+    const activeBreed = () => {
+      const selected = checkedValues(breedFilters);
+      if (selected.length === 0) return 'all';
+      return selected.length === 1 ? selected[0] : 'multiple';
+    };
+
+    const updateBreedTiles = () => {
+      const selected = activeBreed();
+      breedTiles.forEach((tile) => {
+        tile.classList.toggle('is-active', tile.dataset.breedOption === selected);
+      });
+    };
+
+    const updateQuickStatus = () => {
+      const selected = checkedValues(statusFilters);
+      quickStatusButtons.forEach((button) => {
+        button.classList.toggle('active', selected.length === 1 && selected[0] === button.dataset.statusQuick);
+      });
+    };
+
+    const updateUrl = () => {
+      const selected = activeBreed();
+      const nextUrl = new URL(window.location.href);
+      if (selected && selected !== 'all' && selected !== 'multiple') {
+        nextUrl.searchParams.set('breed', selected);
+      } else {
+        nextUrl.searchParams.delete('breed');
+      }
+      window.history.replaceState({}, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+    };
+
+    const matchesText = (card, query) => {
+      if (!query) return true;
+      const haystack = `${card.dataset.search || ''} ${card.textContent || ''}`.toLowerCase();
+      return haystack.includes(query);
+    };
+
+    const sortCards = () => {
+      const mode = sortSelect?.value || 'new';
+      const sorted = [...puppyCards].sort((a, b) => {
+        const priceA = Number(a.dataset.price || 0);
+        const priceB = Number(b.dataset.price || 0);
+        if (mode === 'price-asc') return priceA - priceB;
+        if (mode === 'price-desc') return priceB - priceA;
+        return Number(a.dataset.initialIndex || 0) - Number(b.dataset.initialIndex || 0);
+      });
+
+      sorted.forEach((card) => shopProducts.insertBefore(card, emptyState || null));
+    };
+
+    const applyFilters = () => {
+      const query = (shopSearch?.value || '').trim().toLowerCase();
+      const min = priceMin?.value ? Number(priceMin.value) : Number.NEGATIVE_INFINITY;
+      const max = priceMax?.value ? Number(priceMax.value) : Number.POSITIVE_INFINITY;
+      const selectedStatuses = checkedValues(statusFilters);
+      const selectedBreeds = checkedValues(breedFilters);
+      const selectedSexes = checkedValues(sexFilters);
+
+      sortCards();
+
+      let visibleCount = 0;
+      puppyCards.forEach((card) => {
+        const price = Number(card.dataset.price || 0);
+        const statusMatch = selectedStatuses.length === 0 || selectedStatuses.includes(card.dataset.status);
+        const breedMatch = selectedBreeds.length === 0 || selectedBreeds.includes(card.dataset.breed);
+        const sexMatch = selectedSexes.length === 0 || selectedSexes.includes(card.dataset.sex);
+        const priceMatch = price >= min && price <= max;
+        const textMatch = matchesText(card, query);
+        const visible = statusMatch && breedMatch && sexMatch && priceMatch && textMatch;
+
+        card.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+
+      if (emptyState) emptyState.hidden = visibleCount > 0;
+      updateBreedTiles();
+      updateQuickStatus();
+      updateUrl();
+    };
+
+    if (initialBreed && breedFilters.some((item) => item.value === initialBreed)) {
+      setCheckedValues(breedFilters, [initialBreed]);
+      document.getElementById('catalog')?.scrollIntoView({ block: 'start' });
+    }
+
+    breedToggle?.addEventListener('click', () => {
+      if (!breedMenu) return;
+      const isHidden = breedMenu.hasAttribute('hidden');
+      breedMenu.toggleAttribute('hidden', !isHidden);
+      breedToggle.setAttribute('aria-expanded', String(isHidden));
+    });
+
+    breedTiles.forEach((tile) => {
+      tile.addEventListener('click', () => {
+        const breed = tile.dataset.breedOption;
+        setCheckedValues(breedFilters, breed && breed !== 'all' ? [breed] : []);
+        if (breedMenu) breedMenu.hidden = true;
+        breedToggle?.setAttribute('aria-expanded', 'false');
+        applyFilters();
       });
     });
+
+    quickStatusButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const status = button.dataset.statusQuick;
+        const selected = checkedValues(statusFilters);
+        setCheckedValues(statusFilters, selected.length === 1 && selected[0] === status ? [] : [status]);
+        applyFilters();
+      });
+    });
+
+    viewButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const view = button.dataset.shopView;
+        viewButtons.forEach((item) => item.classList.toggle('active', item === button));
+        shopProducts.classList.toggle('is-list', view === 'list');
+      });
+    });
+
+    shopSearch?.addEventListener('input', applyFilters);
+    shopSearchSubmit?.addEventListener('click', applyFilters);
+    sortSelect?.addEventListener('change', applyFilters);
+    allFilterInputs.forEach((input) => input.addEventListener('input', applyFilters));
+    allFilterInputs.forEach((input) => input.addEventListener('change', applyFilters));
+
+    resetButton?.addEventListener('click', () => {
+      if (shopSearch) shopSearch.value = '';
+      if (priceMin) priceMin.value = defaultMin;
+      if (priceMax) priceMax.value = defaultMax;
+      [...statusFilters, ...breedFilters, ...sexFilters].forEach((input) => {
+        input.checked = false;
+      });
+      if (sortSelect) sortSelect.value = 'new';
+      applyFilters();
+    });
+
+    applyFilters();
+  } else {
+    const searchInput = document.querySelector('.search-field input');
+    const searchableCards = [...document.querySelectorAll('.catalog-card, .product-card')];
+    if (searchInput && searchableCards.length) {
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        searchableCards.forEach((card) => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    }
   }
 
   // Photo effects disabled: images stay static; no lightbox, zoom or parallax.

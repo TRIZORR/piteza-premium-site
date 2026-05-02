@@ -32,135 +32,87 @@
 <main class="page shop-page">
 <section class="container section shop-controls" aria-label="Поиск щенка">
 <div class="shop-entry-row">
-<button class="shop-breed-button" type="button"><svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h12"></path><path d="M4 17h16"></path></svg><span>Выбор породы</span></button>
-<label class="shop-search-field"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input aria-label="Поиск по щенкам" placeholder="Введите ваш запрос..."/><button type="button" aria-label="Найти щенка"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.9" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button></label>
+<button class="shop-breed-button" type="button" data-shop-breed-toggle aria-expanded="false"><svg class="icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 12h12"></path><path d="M4 17h16"></path></svg><span>Выбор породы</span></button>
+<label class="shop-search-field"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input aria-label="Поиск по щенкам" data-shop-search placeholder="Введите ваш запрос..."/><button type="button" aria-label="Найти щенка" data-shop-search-submit><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.9" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button></label>
+</div>
+<div class="shop-breed-menu" data-shop-breed-menu hidden>
+<button class="shop-breed-tile is-active shop-breed-tile-wide" type="button" data-breed-option="all"><img alt="" decoding="async" loading="lazy" src="assets/images/catalog-brown.png"/><span>Весь каталог</span></button>
+<button class="shop-breed-tile" type="button" data-breed-option="maltese"><img alt="" decoding="async" loading="lazy" src="assets/images/breed-top-white.png"/><span>Щенки мальтезе</span></button>
+<button class="shop-breed-tile" type="button" data-breed-option="maltipoo"><img alt="" decoding="async" loading="lazy" src="assets/images/breed-top-cream.png"/><span>Щенки мальтипу</span></button>
+<button class="shop-breed-tile" type="button" data-breed-option="toy-poodle"><img alt="" decoding="async" loading="lazy" src="assets/images/breed-top-brown.png"/><span>Щенки той-пуделя</span></button>
 </div>
 <div class="shop-action-row">
 <a class="shop-action-card shop-action-card-blue" href="contact.html">Наш Telegram канал</a>
-<a class="shop-action-card shop-action-card-dark" href="contact.html">Помочь выбрать кличку</a>
+<a class="shop-action-card shop-action-card-dark" href="contact.html">Помочь подобрать щенка</a>
 </div>
 <div class="shop-toolbar">
-<button class="shop-select" type="button">Сначала новые <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m7 10 5 5 5-5"></path></svg></button>
-<div class="shop-view-toggle" aria-label="Вид каталога"><button class="active" type="button" aria-label="Плитка"><svg class="icon" fill="currentColor" viewbox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"></path></svg></button><button type="button" aria-label="Список"><svg class="icon" fill="currentColor" viewbox="0 0 24 24"><path d="M4 5h4v4H4zM10 6h10v2H10zM4 10h4v4H4zM10 11h10v2H10zM4 15h4v4H4zM10 16h10v2H10z"></path></svg></button></div>
-<div class="shop-status-pills" aria-label="Статусы"><span><b class="status-dot status-free"></b>Доступен</span><span><b class="status-dot status-soon"></b>Скоро</span><span><b class="status-cross">×</b>Резерв</span></div>
-<button class="shop-select shop-currency" type="button">Рубли <svg class="icon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="m7 10 5 5 5-5"></path></svg></button>
+<select class="shop-select" data-shop-sort aria-label="Сортировка щенков"><option value="new">Сначала новые</option><option value="price-asc">Цена по возрастанию</option><option value="price-desc">Цена по убыванию</option></select>
+<div class="shop-view-toggle" aria-label="Вид каталога"><button class="active" type="button" data-shop-view="grid" aria-label="Плитка"><svg class="icon" fill="currentColor" viewbox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"></path></svg></button><button type="button" data-shop-view="list" aria-label="Список"><svg class="icon" fill="currentColor" viewbox="0 0 24 24"><path d="M4 5h4v4H4zM10 6h10v2H10zM4 10h4v4H4zM10 11h10v2H10zM4 15h4v4H4zM10 16h10v2H10z"></path></svg></button></div>
+<div class="shop-status-pills" aria-label="Статусы"><button type="button" data-status-quick="free"><b class="status-dot status-free"></b>Доступен</button><button type="button" data-status-quick="soon"><b class="status-dot status-soon"></b>Скоро</button><button type="button" data-status-quick="reserve"><b class="status-cross">×</b>Резерв</button></div>
+<button class="shop-select shop-reset" type="button" data-shop-reset>Сбросить</button>
 </div>
 </section>
 <section class="container shop-catalog-layout" id="catalog">
-<div class="catalog-grid shop-products">
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Тедди" decoding="async" loading="lazy" src="assets/images/catalog-brown.png"/><span class="shop-card-status shop-card-status-reserve">Резерв</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Тедди</h4><div class="breed">Той-пудель</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">330 000 ₽</div>
-<div class="info-line"><span>Мальчик</span><span>2 мес.</span><span>2.5-3.5 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<div class="catalog-grid shop-products" data-shop-products>
+<article class="catalog-card shop-card" data-puppy-card data-breed="toy-poodle" data-price="330000" data-status="reserve" data-sex="male" data-search="той-пудель тедди мальчик резерв">
+<div class="shop-card-media"><img alt="Щенок той-пуделя" decoding="async" loading="lazy" src="assets/images/catalog-brown.png"/></div>
+<div class="body"><h4>Той-пудель</h4><div class="shop-price">330 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Белла" decoding="async" loading="lazy" src="assets/images/catalog-white.png"/><span class="shop-card-status shop-card-status-free">Свободна</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Белла</h4><div class="breed">Мальтезе</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">320 000 ₽</div>
-<div class="info-line"><span>Девочка</span><span>2.5 мес.</span><span>2-3 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="maltese" data-price="320000" data-status="free" data-sex="female" data-search="мальтезе белла девочка свободна">
+<div class="shop-card-media"><img alt="Щенок мальтезе" decoding="async" loading="lazy" src="assets/images/catalog-white.png"/></div>
+<div class="body"><h4>Мальтезе</h4><div class="shop-price">320 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Мило" decoding="async" loading="lazy" src="assets/images/catalog-cream.png"/><span class="shop-card-status shop-card-status-free">Свободен</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Мило</h4><div class="breed">Мальтипу</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">350 000 ₽</div>
-<div class="info-line"><span>Мальчик</span><span>3 мес.</span><span>3-4 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="maltipoo" data-price="350000" data-status="free" data-sex="male" data-search="мальтипу мило мальчик свободен">
+<div class="shop-card-media"><img alt="Щенок мальтипу" decoding="async" loading="lazy" src="assets/images/catalog-cream.png"/></div>
+<div class="body"><h4>Мальтипу</h4><div class="shop-price">350 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Луна" decoding="async" loading="lazy" src="assets/images/catalog-luna.png"/><span class="shop-card-status shop-card-status-free">Свободна</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Луна</h4><div class="breed">Мальтипу</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">360 000 ₽</div>
-<div class="info-line"><span>Девочка</span><span>2.5 мес.</span><span>3-4 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="maltipoo" data-price="360000" data-status="free" data-sex="female" data-search="мальтипу луна девочка свободна">
+<div class="shop-card-media"><img alt="Щенок мальтипу" decoding="async" loading="lazy" src="assets/images/catalog-luna.png"/></div>
+<div class="body"><h4>Мальтипу</h4><div class="shop-price">360 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Чарли" decoding="async" loading="lazy" src="assets/images/catalog-charli.png"/><span class="shop-card-status shop-card-status-free">Свободен</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Чарли</h4><div class="breed">Той-пудель</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">340 000 ₽</div>
-<div class="info-line"><span>Мальчик</span><span>2 мес.</span><span>2.5-3.5 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="toy-poodle" data-price="340000" data-status="free" data-sex="male" data-search="той-пудель чарли мальчик свободен">
+<div class="shop-card-media"><img alt="Щенок той-пуделя" decoding="async" loading="lazy" src="assets/images/catalog-charli.png"/></div>
+<div class="body"><h4>Той-пудель</h4><div class="shop-price">340 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Софи" decoding="async" loading="lazy" src="assets/images/catalog-sofi.png"/><span class="shop-card-status shop-card-status-soon">Скоро</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Софи</h4><div class="breed">Мальтезе</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">310 000 ₽</div>
-<div class="info-line"><span>Девочка</span><span>2 мес.</span><span>2-3 кг</span></div>
-<div class="mini-icons"><span>Видео по запросу</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="maltese" data-price="310000" data-status="soon" data-sex="female" data-search="мальтезе софи девочка скоро">
+<div class="shop-card-media"><img alt="Щенок мальтезе" decoding="async" loading="lazy" src="assets/images/catalog-sofi.png"/></div>
+<div class="body"><h4>Мальтезе</h4><div class="shop-price">310 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Оливер" decoding="async" loading="lazy" src="assets/images/catalog-oliver.png"/><span class="shop-card-status shop-card-status-free">Свободен</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Оливер</h4><div class="breed">Мальтипу</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">355 000 ₽</div>
-<div class="info-line"><span>Мальчик</span><span>3 мес.</span><span>3-4 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="maltipoo" data-price="355000" data-status="free" data-sex="male" data-search="мальтипу оливер мальчик свободен">
+<div class="shop-card-media"><img alt="Щенок мальтипу" decoding="async" loading="lazy" src="assets/images/catalog-oliver.png"/></div>
+<div class="body"><h4>Мальтипу</h4><div class="shop-price">355 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Коко" decoding="async" loading="lazy" src="assets/images/catalog-koko.png"/><span class="shop-card-status shop-card-status-reserve">Резерв</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Коко</h4><div class="breed">Мальтезе</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">345 000 ₽</div>
-<div class="info-line"><span>Девочка</span><span>2.5 мес.</span><span>2-3 кг</span></div>
-<div class="mini-icons"><span>Видео доступно</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="maltese" data-price="345000" data-status="reserve" data-sex="female" data-search="мальтезе коко девочка резерв">
+<div class="shop-card-media"><img alt="Щенок мальтезе" decoding="async" loading="lazy" src="assets/images/catalog-koko.png"/></div>
+<div class="body"><h4>Мальтезе</h4><div class="shop-price">345 000 ₽</div></div>
 </article>
-<article class="catalog-card shop-card">
-<div class="shop-card-media"><img alt="Бруни" decoding="async" loading="lazy" src="assets/images/puppy-brown-c.png"/><span class="shop-card-status shop-card-status-soon">Скоро</span></div>
-<div class="body">
-<div class="card-topline"><div><h4>Бруни</h4><div class="breed">Той-пудель</div></div><span class="circle-btn card-favorite"><svg class="icon" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 20.5s-7-4.35-9-8.72C1.43 8.28 3.2 4.5 7.2 4.5A5.1 5.1 0 0 1 12 7.2a5.1 5.1 0 0 1 4.8-2.7c4 0 5.77 3.78 4.2 7.28-2 4.37-9 8.72-9 8.72Z"></path></svg></span></div>
-<div class="shop-price">330 000 ₽</div>
-<div class="info-line"><span>Мальчик</span><span>2 мес.</span><span>2.5-3.5 кг</span></div>
-<div class="mini-icons"><span>Видео по запросу</span><span>Документы РКФ</span></div>
-<div class="card-actions"><a class="cta-outline" href="puppy-single.html">Подробнее</a></div>
-</div>
+<article class="catalog-card shop-card" data-puppy-card data-breed="toy-poodle" data-price="330000" data-status="soon" data-sex="male" data-search="той-пудель бруни мальчик скоро">
+<div class="shop-card-media"><img alt="Щенок той-пуделя" decoding="async" loading="lazy" src="assets/images/puppy-brown-c.png"/></div>
+<div class="body"><h4>Той-пудель</h4><div class="shop-price">330 000 ₽</div></div>
 </article>
+<div class="shop-empty" data-shop-empty hidden>По этим фильтрам пока нет щенков. Попробуйте изменить породу, цену или запрос.</div>
 </div>
 <aside class="shop-filter-panel" aria-label="Фильтры каталога">
 <div class="shop-filter-group">
 <h3>Фильтровать по цене</h3>
-<div class="shop-price-inputs"><span>300 000</span><span>400 000</span></div>
-<div class="shop-price-range"><span></span></div>
+<div class="shop-price-inputs"><input type="number" data-price-min value="300000" min="0" step="10000" aria-label="Минимальная цена"/><input type="number" data-price-max value="400000" min="0" step="10000" aria-label="Максимальная цена"/></div>
 </div>
 <div class="shop-filter-group">
 <h3>Наличие</h3>
-<label><input type="checkbox"/> В продаже (5)</label>
-<label><input type="checkbox"/> Скоро (2)</label>
-<label><input type="checkbox"/> В резерве (2)</label>
+<label><input type="checkbox" data-filter-status value="free"/> В продаже</label>
+<label><input type="checkbox" data-filter-status value="soon"/> Скоро</label>
+<label><input type="checkbox" data-filter-status value="reserve"/> В резерве</label>
 </div>
 <div class="shop-filter-group">
 <h3>Порода</h3>
-<label><input type="checkbox"/> Мальтезе (3)</label>
-<label><input type="checkbox"/> Мальтипу (3)</label>
-<label><input type="checkbox"/> Той-пудель (3)</label>
+<label><input type="checkbox" data-filter-breed value="maltese"/> Мальтезе</label>
+<label><input type="checkbox" data-filter-breed value="maltipoo"/> Мальтипу</label>
+<label><input type="checkbox" data-filter-breed value="toy-poodle"/> Той-пудель</label>
 </div>
 <div class="shop-filter-group">
 <h3>Пол щенка</h3>
-<label><input type="checkbox"/> Девочка (4)</label>
-<label><input type="checkbox"/> Мальчик (5)</label>
+<label><input type="checkbox" data-filter-sex value="female"/> Девочка</label>
+<label><input type="checkbox" data-filter-sex value="male"/> Мальчик</label>
 </div>
 <a class="cta-dark" href="contact.html">Подобрать щенка</a>
 </aside>
