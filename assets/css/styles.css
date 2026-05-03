@@ -5278,6 +5278,46 @@ body.is-page-entering .page-transition__paw {
   min-height: 134px;
 }
 
+/* Reserve tile polish: compact typography so the card aligns with breed tiles. */
+.home-hero .reserve-card {
+  gap: clamp(9px, 1vw, 12px);
+  padding: clamp(20px, 2vw, 28px) !important;
+}
+
+.home-hero .reserve-card::after {
+  right: clamp(-58px, -4vw, -34px);
+  top: clamp(-58px, -4vw, -34px);
+  width: clamp(125px, 12vw, 165px);
+  height: clamp(125px, 12vw, 165px);
+}
+
+.home-hero .reserve-card .circle-btn {
+  width: clamp(42px, 4vw, 52px);
+  height: clamp(42px, 4vw, 52px);
+}
+
+.home-hero .reserve-card h3,
+.home-hero .reserve-card h3[style] {
+  margin: clamp(6px, .8vw, 10px) 0 0 !important;
+  font-size: clamp(26px, 2.2vw, 34px) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -.03em !important;
+}
+
+.home-hero .reserve-card .lead,
+.home-hero .reserve-card .lead[style] {
+  max-width: 390px;
+  margin: 0 !important;
+  font-size: clamp(13px, 1.08vw, 15px) !important;
+  line-height: 1.45 !important;
+}
+
+.home-hero .reserve-card .subtle-link {
+  margin-top: clamp(2px, .5vw, 8px);
+  font-size: 14px;
+}
+
 .shop-breed-menu {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   align-items: stretch;
@@ -5316,6 +5356,11 @@ body.is-page-entering .page-transition__paw {
 }
 
 @media (max-width: 560px) {
+  .home-hero .reserve-card {
+    min-height: 190px !important;
+    justify-content: center;
+  }
+
   .shop-breed-menu {
     grid-template-columns: 1fr !important;
   }
