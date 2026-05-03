@@ -5210,3 +5210,82 @@ body.is-page-entering .page-transition__paw {
     font-size: clamp(25px, 8vw, 32px) !important;
   }
 }
+
+/* Final content fixes: cleaner home cards, square breed picker, live map. */
+.home-hero .hero-copy-small h3 {
+  margin: 0;
+  font-weight: 800;
+  text-shadow: 0 2px 14px rgba(20, 14, 10, .28);
+}
+
+.home-hero .hero-copy-small p {
+  display: none;
+}
+
+.puppy-grid-home .home-shop-card {
+  min-height: 100%;
+}
+
+.puppy-grid-home .home-shop-card .shop-card-link {
+  height: 100%;
+}
+
+.puppy-grid-home .home-shop-card .shop-card-media img {
+  aspect-ratio: 1 / .82;
+}
+
+.puppy-grid-home .home-shop-card .body {
+  min-height: 134px;
+}
+
+.shop-breed-menu {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch;
+}
+
+.shop-breed-tile,
+.shop-breed-tile-wide {
+  grid-row: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 1 / 1;
+}
+
+.shop-breed-tile img {
+  object-fit: cover;
+  transform: none;
+}
+
+.map-embed {
+  display: block;
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+  border-radius: 0 28px 28px 0;
+  background: #f2ebe1;
+}
+
+@media (max-width: 920px) {
+  .shop-breed-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .map-embed {
+    min-height: 320px;
+    border-radius: 0 0 28px 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .shop-breed-menu {
+    grid-template-columns: 1fr !important;
+  }
+
+  .shop-breed-tile,
+  .shop-breed-tile-wide {
+    aspect-ratio: 1 / 1;
+  }
+
+  .map-embed {
+    min-height: 280px;
+  }
+}
