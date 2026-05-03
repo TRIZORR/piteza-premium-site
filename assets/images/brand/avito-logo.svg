@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72" role="img" aria-labelledby="title">
+  <title id="title">Avito</title>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#1f1510" flood-opacity=".08"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <circle cx="30" cy="25" r="11" fill="#97cf26"/>
+    <circle cx="51" cy="25" r="11" fill="#00aaff"/>
+    <circle cx="30" cy="46" r="11" fill="#ff5252"/>
+    <circle cx="51" cy="46" r="11" fill="#a44cff"/>
+  </g>
+  <text x="78" y="47" fill="#2a211b" font-family="Manrope, Arial, sans-serif" font-size="35" font-weight="800" letter-spacing="-.04em">Avito</text>
+</svg>
